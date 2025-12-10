@@ -1,0 +1,56 @@
+﻿@model List<TaskCategory>
+@section Styles {
+    <link rel="stylesheet" href="~/css/Category.css" />
+}
+<div class="table-container">
+    <div class="table-header">
+        <h3>📂 All Categories</h3>
+        <a asp-controller="Category" asp-action="Create" class="btn-create">+ New Category</a>
+    </div>
+
+    @if (Model.Count > 0)
+    {
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Category Name</th>
+                    <th style="text-align: center;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><span class="category-id">#@item.Id</span></td>
+                        <td><span class="category-name">@item.Name</span></td>
+                        <td style="text-align: center;">
+                            <a asp-controller="Category" asp-action="Detail" asp-route-Id="@item.Id"
+                               class="action-btn btn-detail" title="View Details">👁️ View</a>
+                            <a asp-controller="Category" asp-action="Update" asp-route-Id="@item.Id"
+                               class="action-btn btn-update" title="Edit">✏️ Edit</a>
+                            <button type="button" class="action-btn btn-delete" data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal_@item.Id" title="Delete">
+                                🗑️ Delete
+                            </button>
+                        </td>
+
+                       
+                     
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="no-data">
+            <h3>📭 No Categories Found</h3>
+            <p>Create your first category to get started.</p>
+            <a asp-controller="Category" asp-action="Create" class="btn-create" style="margin-top: 1rem;">Create First Category</a>
+        </div>
+    }
+</div>
+
+
+

@@ -1,0 +1,44 @@
+﻿@model TodoTask
+@section Styles {
+    <link rel="stylesheet" href="~/css/Home.css" />
+}
+
+<div class="detail-wrapper">
+    <div class="detail-card">
+        <div class="card-header">
+            <h2>📋 Task Details</h2>
+            <div class="header-actions">
+                <a asp-controller="Home" asp-action="Index" class="btn-secondary">← Back to Tasks</a>
+                <a asp-controller="Home" asp-action="Update" asp-route-id="@Model.Id" class="btn-primary">✏️ Edit Task</a>
+            </div>
+        </div>
+
+        <div class="detail-content">
+            <div class="detail-item">
+                <label class="detail-label">Task Name</label>
+                <div class="detail-value">@Model.Name</div>
+            </div>
+
+            <div class="detail-item">
+                <label class="detail-label">Description</label>
+                <div class="detail-value">@Model.Description</div>
+            </div>
+
+            <div class="detail-item">
+                <label class="detail-label">Deadline</label>
+                <div class="detail-value">@Model.Deadline.ToString("MMM dd, yyyy 'at' hh:mm tt")</div>
+            </div>
+
+            @if (Model.taskCategory != null)
+            {
+                <div class="detail-item">
+                    <label class="detail-label">Category</label>
+                    <div class="detail-value">
+                        <span class="category-badge">@Model.taskCategory.Name</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

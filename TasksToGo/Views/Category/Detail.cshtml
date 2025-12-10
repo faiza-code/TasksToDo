@@ -1,0 +1,43 @@
+﻿@model TaskCategory
+@section Styles {
+    <link rel="stylesheet" href="~/css/Category.css" />
+}
+
+<div class="detail-wrapper">
+    @if (Model != null)
+    {
+        <div class="detail-card">
+            <h2>📋 Category Details</h2>
+            <div class="card-header">
+                <div class="header-actions">
+                    <a asp-controller="Category" asp-action="Index" class="btn-secondary">← Back</a>
+                    <a asp-controller="Category" asp-action="Update" asp-route-Id="@Model.Id" class="btn-primary">✏️ Edit</a>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <div class="detail-item">
+                    <label class="detail-label">Category Name</label>
+                    <div class="detail-value">
+                        <span class="category-id">#@Model.Id</span>
+                        @Model.Name
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <label class="detail-label">Created Date</label>
+                    <div class="detail-value">@Model.CreatedAt.ToString("MMM dd, yyyy 'at' hh:mm tt")</div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="no-data-card">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">📭</div>
+            <h2>No Category Found</h2>
+            <p>The category you're looking for doesn't exist.</p>
+            <a asp-controller="Category" asp-action="Index" class="btn-primary">← Back to Categories</a>
+        </div>
+    }
+</div>

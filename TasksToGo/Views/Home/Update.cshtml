@@ -1,0 +1,51 @@
+﻿@model TodoTask
+@section Styles {
+    <link rel="stylesheet" href="~/css/Home.css" />
+}
+
+<div class="edit-form-wrapper">
+    <div class="edit-card">
+        <div class="card-header">
+            <h2>✏️ Edit Task</h2>
+            <div class="header-actions">
+                <a asp-controller="Home" asp-action="Index" class="btn-secondary">← Back to Tasks</a>
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@Model.Id" class="btn-outline">👁️ View</a>
+            </div>
+        </div>
+
+        <form method="post" asp-controller="Home" asp-action="Update">
+            <input type="hidden" asp-for="Id" />
+            <div asp-validation-summary="All" class="error-summary"></div>
+
+            <div class="input-group">
+                <input asp-for="Name" class="modern-input" placeholder=" " />
+                <label asp-for="Name" class="input-label">Task Name</label>
+                <span asp-validation-for="Name" class="error-text"></span>
+            </div>
+
+            <div class="input-group">
+                <input asp-for="Description" class="modern-input" placeholder=" " />
+                <label asp-for="Description" class="input-label">Description</label>
+                <span asp-validation-for="Description" class="error-text"></span>
+            </div>
+
+            <div class="input-group">
+                <input asp-for="Deadline" type="datetime-local" class="modern-input" placeholder=" " />
+                <label asp-for="Deadline" class="input-label">Deadline</label>
+                <span asp-validation-for="Deadline" class="error-text"></span>
+            </div>
+
+            <div class="input-group">
+                <select asp-for="TaskCategoryId" asp-items="ViewBag.CategoriesList" class="modern-input modern-select">
+                    <option value="">Choose category</option>
+                </select>
+                <label asp-for="TaskCategoryId" class="input-label">Category</label>
+                <span asp-validation-for="TaskCategoryId" class="error-text"></span>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" class="btn-primary">💾 Update Task</button>
+            </div>
+        </form>
+    </div>
+</div>

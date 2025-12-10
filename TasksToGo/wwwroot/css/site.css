@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,500,400,600,700,800,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: #050816;
+}
+
+/* Navbar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px #FCF5EE;
+    color: #050816;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-box {
+    width: 30px;
+    height: 30px;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 24px;
+}
+
+.nav-left a {
+    color: #050816;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-left a:hover {
+        color: #234C6A;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-right input {
+    background-color: #F4F4F4;
+    border: 1px solid #F4F4F4;
+    padding: 10px 10px;
+    border-radius: 4px;
+    color: #e5e7eb;
+    width: 350px;
+}
+.nav-right input::placeholder {
+     color: #9ca3af;
+     font-size: 13px;
+}
+
+    .nav-right input:focus {
+        outline: none;
+        border: 1px solid #F4F4F4;
+        color: #002455;
+    }
+
+.btn {
+    background-color: #234C6A;
+    border: none;
+    color: #ffffff;
+    padding: 10px 10px;
+    border-radius: 4px;
+    text-align:center;
+    cursor: pointer;
+    width: 150px;
+}
+
+.container{
+   margin:20px;
+}
+
