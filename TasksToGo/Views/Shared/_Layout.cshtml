@@ -21,6 +21,8 @@
             <span class="logo-text">TaskToDo</span>
             <a asp-controller="Home" asp-action="Index">Create Task</a>
             <a asp-controller="Category" asp-action="Index">Show All Categories</a>
+            <a asp-controller="Account" asp-action="Login">Login</a>
+            <a asp-controller="Account" asp-action="Register">Register</a>
         </div>
         <div class="nav-right">
             <form asp-controller="Home" asp-action="Index" method="get" style="display:inline;">
@@ -38,11 +40,13 @@
     @RenderSection("Scripts", required: false)
 
 
-    <footer class="border-top footer text-muted">
+    <footer class="app-footer">
         <div class="container">
-            &copy; 2025 - TasksToGo - Developer by : Faiza Alhandali
+            <span>&copy; 2025 - TasksToGo</span>
+            <span class="developer">Developed by Faiza Alhandali</span>
         </div>
     </footer>
+
    
 
 </body>

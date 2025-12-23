@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TasksToGo.Context;
 
@@ -11,9 +12,11 @@ using TasksToGo.Context;
 namespace TasksToGo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251215152156_initMigration")]
+    partial class initMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -240,7 +243,7 @@ namespace TasksToGo.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2025, 12, 15, 15, 22, 36, 399, DateTimeKind.Utc).AddTicks(66));
+                        .HasDefaultValue(new DateTime(2025, 12, 15, 15, 21, 56, 138, DateTimeKind.Utc).AddTicks(7811));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -263,7 +266,7 @@ namespace TasksToGo.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2025, 12, 15, 15, 22, 36, 399, DateTimeKind.Utc).AddTicks(1875));
+                        .HasDefaultValue(new DateTime(2025, 12, 15, 15, 21, 56, 138, DateTimeKind.Utc).AddTicks(9178));
 
                     b.Property<DateTime>("Deadline")
                         .HasColumnType("datetime2");

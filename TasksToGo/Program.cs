@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TasksToGo.Context;
+using TasksToGo.Models.AuthModel;
 
 namespace TasksToGo
 {
@@ -15,7 +17,22 @@ namespace TasksToGo
             builder.Services.AddDbContext<ApplicationDbContext>(options=>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConn")));
 
+            builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredUniqueChars = 1;
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase = true;
+
+            }
+           )
+           .AddEntityFrameworkStores<ApplicationDbContext>()
+           .AddDefaultTokenProviders();
+
+
+
             var app = builder.Build();
+            
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

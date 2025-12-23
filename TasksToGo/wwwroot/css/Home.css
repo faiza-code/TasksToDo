@@ -1,7 +1,19 @@
-﻿.tasks-wrapper {
-    min-height: 100vh;
-    padding: 2rem 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+﻿body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.tasks-wrapper {
+    min-height: 60vh;
+/*    padding: 2rem 1rem;
+    background-color: #ffffff;*/
+    padding: 40px;
+/*    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,.25);*/
+    color: #fff;
 }
 
 .tasks-header {
@@ -10,10 +22,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
     .tasks-header h1 {
-        color: white;
+        color: #050816;
         font-size: 2.5rem;
         font-weight: 700;
         margin: 0;
@@ -27,14 +40,13 @@
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
-
 .task-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    border-radius: 24px;
-    padding: 2rem;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -124,7 +136,8 @@
 }
 
 .category-badge {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    /*    background: linear-gradient(135deg, #667eea, #764ba2);*/
+    background-image: linear-gradient(to right, #c97eef, #e292e2, #f0abdb, #f3c5dc, #eee1e5);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -138,7 +151,8 @@
     border-radius: 16px;
     font-size: 1.1rem;
     font-weight: 600;
-    background: linear-gradient(135deg, #48bb78, #38a169);
+    /*    background: linear-gradient(135deg, #48bb78, #38a169);*/
+    background-image: linear-gradient(to right, #c97eef, #e292e2, #f0abdb, #f3c5dc, #eee1e5);
     color: white;
     text-decoration: none;
     display: inline-flex;
@@ -152,15 +166,22 @@
     }
 
 .no-tasks-card {
-    background: rgba(255, 255, 255, 0.95);
+    /*    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 24px;
-    padding: 4rem 3rem;
+    padding: 4rem 3rem;*/
     max-width: 500px;
     margin: 3rem auto;
-    text-align: center;
+    /*    text-align: center;
     box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);*/
+    text-align: center;
+    padding: 4rem 3rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,.25);
+    color: #fff;
 }
 
     .no-tasks-card h2 {
@@ -170,7 +191,7 @@
     }
 
     .no-tasks-card p {
-        color: #718096;
+        color: #547792;
         font-size: 1.2rem;
         margin-bottom: 2rem;
     }
@@ -204,14 +225,16 @@
 }
 
 .create-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    border-radius: 24px;
     padding: 3rem 2.5rem;
     width: 100%;
     max-width: 600px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding: 4rem 3rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,.25);
+    color: #fff;
 }
 
 /* header */
@@ -224,13 +247,12 @@
     padding-bottom: 1.5rem;
     border-bottom: 2px solid #e2e8f0;
 }
-
-    .card-header h2 {
+.card-header h2 {
         color: #2d3748;
         font-size: 2rem;
         font-weight: 700;
         margin: 0;
-    }
+}
 
 
 
@@ -250,12 +272,11 @@
     outline: none;
     appearance: none;
 }
-
-    .modern-input:focus {
+.modern-input:focus {
         border-color: #667eea;
         box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
         transform: translateY(-2px);
-    }
+}
 
 .input-label {
     position: absolute;
